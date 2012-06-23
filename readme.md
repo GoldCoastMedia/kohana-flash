@@ -12,7 +12,8 @@ Add to the Kohana *module* directory and then add to your *application/bootstrap
 
 Example:
 
-```Kohana::modules(array(
+```
+Kohana::modules(array(
 	...
 	'flash' => MODPATH.'flash',
 	...
@@ -25,14 +26,20 @@ There are five default flash message types: *SUCCESS, INFO, NOTICE, WARNING, ERR
 
 Setting a flash message:
 
-```	Flash::notice('A notice message.');```
+```
+Flash::notice('A notice message.');
+```
 
 To render and display flash messages:
 
-```	<div><?php echo Flash::render(); ?></div>```
+```
+<div><?php echo Flash::render(); ?></div>
+```
 
 By default the view file *views/flash/default.php* is used. To set a different
 view use:
 
-```	Flash::$default_view = 'another/view'```
+```
+Flash::$default_view = 'another/view'
+```
 
