@@ -36,10 +36,17 @@ To render and display flash messages:
 <div><?php echo Flash::render(); ?></div>
 ```
 
+Changing Views
+------------
 By default the view file *views/flash/default.php* is used. To set a different
 view use:
 
 ```
-Flash::$default_view = 'another/view'
+Flash::view('another/view');
+```
+Alternatively you can set a different view when rendering the flash message:
+
+```
+<div><?php echo Flash::render('another/view'); ?></div>
 ```
 
