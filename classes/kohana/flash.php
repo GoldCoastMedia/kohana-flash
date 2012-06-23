@@ -12,7 +12,7 @@ class Kohana_Flash {
 	/**
 	 * @var  string  The default view
 	 */
-	public static $default_view = 'flash/default';
+	private static $_flash_view = 'flash/default';
 
 	/**
 	 * @var  string  The default session key
@@ -88,7 +88,7 @@ class Kohana_Flash {
 		}
 
 		// Use the default view if unset
-		$view === NULL AND $view = Flash::$default_view;
+		$view === NULL AND $view = Flash::$_flash_view;
 
 		if( ! $view instanceof Kohana_View) {
 			$view = View::factory($view);
@@ -97,6 +97,16 @@ class Kohana_Flash {
 		$view->set_global('flash', $messages);
 
 		return $view->render();
+	}
+	
+	/**
+	 * Sets the view to be used
+	 *
+	 * @param   string   path to view file
+	 */
+	public static function view($view = NULL)
+	{
+		self::$_flash_view = $view;
 	}
 
 	/**
