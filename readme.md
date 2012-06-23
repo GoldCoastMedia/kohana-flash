@@ -16,7 +16,8 @@ Example:
 	...
 	'flash' => MODPATH.'flash',
 	...
-	));```
+	));
+```
 
 Usage
 -----
